@@ -162,6 +162,3 @@ Test 99: div_convert(3405774592, 16) => "CAFFFF00" [PASS]
 Test 100: sub_convert(3405774592, 16) => "CAFFFF00" [PASS]
 
 Summary: 100/100 tests passed
- 17
- 18 ## Notes
- 19 [Any interesting discoveries or challenges]

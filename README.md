@@ -3,6 +3,12 @@
 # Author
 [Kayden Silva]
 
+# Build Instructions
+‘‘‘bash
+gcc-o convert convert.c main.c
+./convert
+‘‘‘
+
 # Test Results
 Test 1: div_convert(104, 5) => "404" [PASS]
 Test 2: div_convert(156, 8) => "234" [PASS]

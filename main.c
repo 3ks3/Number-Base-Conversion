@@ -69,8 +69,145 @@ int main()
                 }
                 test_num++;
             }
-
         }
+        else if (strcmp(func, "oct_to_bin") == 0)
+        {
+            char input[100];
+
+            if (sscanf(line, "%*s %s %s", input, expected) == 2)
+        {
+        total++;
+
+        oct_to_bin(input, actual);
+
+        if (strcmp(actual, expected) == 0)
+        {
+            printf("Test %d: oct_to_bin(\"%s\") => \"%s\" [PASS]\n", test_num, input, actual);
+            passed++;
+        }
+        else
+        {
+            printf("Test %d: oct_to_bin(\"%s\") => Expected: \"%s\", Got: \"%s\" [FAIL]\n",
+                   test_num, input, expected, actual);
+        }
+        test_num++;
+    }
+}
+else if (strcmp(func, "oct_to_hex") == 0)
+{
+    char input[100];
+
+    if (sscanf(line, "%*s %s %s", input, expected) == 2)
+    {
+        total++;
+
+        oct_to_hex(input, actual);
+
+        if (strcmp(actual, expected) == 0)
+        {
+            printf("Test %d: oct_to_hex(\"%s\") => \"%s\" [PASS]\n", test_num, input, actual);
+            passed++;
+        }
+        else
+        {
+            printf("Test %d: oct_to_hex(\"%s\") => Expected: \"%s\", Got: \"%s\" [FAIL]\n",
+                   test_num, input, expected, actual);
+        }
+        test_num++;
+    }
+}
+else if (strcmp(func, "hex_to_bin") == 0)
+{
+    char input[100];
+
+    if (sscanf(line, "%*s %s %s", input, expected) == 2)
+    {
+        total++;
+
+        hex_to_bin(input, actual);
+
+        if (strcmp(actual, expected) == 0)
+        {
+            printf("Test %d: hex_to_bin(\"%s\") => \"%s\" [PASS]\n", test_num, input, actual);
+            passed++;
+        }
+        else
+        {
+            printf("Test %d: hex_to_bin(\"%s\") => Expected: \"%s\", Got: \"%s\" [FAIL]\n",
+                   test_num, input, expected, actual);
+        }
+        test_num++;
+    }
+}
+else if (strcmp(func, "to_sign_magnitude") == 0)
+{
+    int32_t num;
+
+    if (sscanf(line, "%*s %d %s", &num, expected) == 2)
+    {
+        total++;
+
+        to_sign_magnitude(num, actual);
+
+        if (strcmp(actual, expected) == 0)
+        {
+            printf("Test %d: to_sign_magnitude(%d) => \"%s\" [PASS]\n", test_num, num, actual);
+            passed++;
+        }
+        else
+        {
+            printf("Test %d: to_sign_magnitude(%d) => Expected: \"%s\", Got: \"%s\" [FAIL]\n",
+                   test_num, num, expected, actual);
+        }
+        test_num++;
+    }
+}
+else if (strcmp(func, "to_ones_complement") == 0)
+{
+    int32_t num;
+
+    if (sscanf(line, "%*s %d %s", &num, expected) == 2)
+    {
+        total++;
+
+        to_ones_complement(num, actual);
+
+        if (strcmp(actual, expected) == 0)
+        {
+            printf("Test %d: to_ones_complement(%d) => \"%s\" [PASS]\n", test_num, num, actual);
+            passed++;
+        }
+        else
+        {
+            printf("Test %d: to_ones_complement(%d) => Expected: \"%s\", Got: \"%s\" [FAIL]\n",
+                   test_num, num, expected, actual);
+        }
+        test_num++;
+    }
+}
+else if (strcmp(func, "to_twos_complement") == 0)
+{
+    int32_t num;
+    if (sscanf(line, "%*s %d %s", &num, expected) == 2)
+    {
+        total++;
+
+        to_twos_complement(num, actual);
+
+        if (strcmp(actual, expected) == 0)
+        {
+            printf("Test %d: to_twos_complement(%d) => \"%s\" [PASS]\n", test_num, num, actual);
+            passed++;
+        }
+        else
+        {
+            printf("Test %d: to_twos_complement(%d) => Expected: \"%s\", Got: \"%s\" [FAIL]\n",
+                   test_num, num, expected, actual);
+        }
+        test_num++;
+    }
+}
+
         else if (strcmp(func, "print_tables") == 0)
         {
             if (sscanf(line, "%*s %u", &number) == 1)
